@@ -1,3 +1,5 @@
+import './button.css';
+
 export function Button({children, classButton}){
 
     return (
