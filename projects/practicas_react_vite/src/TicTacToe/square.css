@@ -2,10 +2,14 @@
     background-color: rgb(24, 64, 99);
     /*align-self: center;
     justify-self: center;*/
-    border-radius: 1em;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
     cursor:pointer;
+    font-size: 2rem;
+}
+.square:hover, .square-selected{
+    background-color: rgb(47, 89, 126);
 }
