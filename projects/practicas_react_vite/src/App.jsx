@@ -1,11 +1,11 @@
-import { Button } from "./Button";
+//import { Button } from "./Button";
+import {Board} from './TicTacToe/Board.jsx';
 
 function App() {
 
   return (
-    <Button classButton="button">
-    </Button>
+    <Board></Board>
   );
 }
 
-export default App
+export default App;
