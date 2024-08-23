@@ -1,0 +1,14 @@
+main{
+    display:flex;
+    width:50%;
+    margin:auto;
+    background-color:rgb(156, 199, 197);
+    padding:1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+main img{
+   display: block;
+   width:100%;
+}
