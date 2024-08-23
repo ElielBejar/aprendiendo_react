@@ -1,39 +1,20 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useReloadImage } from "./hooks/useReloadImage.jsx";
+import { useReloadFact } from "./hooks/useReloadFact.jsx";
 
 export function App(){
 
-    const API_FACTS = 'https://catfact.ninja/fact';
-    const API_IMAGES = 'https://cataas.com/cat/says/';
+    const {fact, updateFact} = useReloadFact();
 
-    const [fact, setFact] = useState();
-    const [imageUrl, setImageUrl] = useState();
+    const {imageUrl} = useReloadImage({fact});
 
-    const getFirstWord = (sentence)=>{
-        if(sentence == null){return }
-        return sentence.split(' ')[0];
+    const clickHandler = ()=>{
+        updateFact();
     }
-
-    useEffect(()=>{
-        try{
-          fetch(API_FACTS)
-          .then(data => data.json())
-          .then(response => setFact(response.fact));
-        }catch(e){
-            console.error(e);
-        }
-    },[]);
-
-    useEffect(()=>{
-
-      const firstWord = getFirstWord(fact);
-    
-      setImageUrl(`${API_IMAGES}${firstWord}`);
-    }, [fact]);
 
     return (
         <main>
             <h1>Prueba tecnica</h1>
+            <button onClick={clickHandler}>Nuevo facto</button>
             <p>{fact}</p>
             <img src={imageUrl} alt="cat image" />
         </main>
